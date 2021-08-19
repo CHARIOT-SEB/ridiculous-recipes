@@ -1,16 +1,19 @@
-import getName from './getName.js'
+import GetName from './responseComponents/GetName.js'
+import GetFoods from './responseComponents/GetFoods.js';
+import GetEquipment from './responseComponents/GetEquipment.js';
+import GetTime from './responseComponents/GetTime.js';
+import GetHunger from './responseComponents/GetHunger.js';
+
 
 const Response = ({stage}) => {
-    const responses = {
-        '0': <getName />,
-        '1': "What's in your fridge or cupboards?",
-        '2': 'What cooking utensils do you have? Choose four',
-        '3': 'What time do you want to eat?',
-        '4': 'How hungry are you?'
-        }
     return (
         <div>
-            {responses[stage]}
+            {stage === 0 && <GetName />}
+            {stage === 1 && <GetFoods />}
+            {stage === 2 && <GetEquipment />}
+            {stage === 3 && <GetTime />}
+            {stage === 4 && <GetHunger />}
+
         </div>
     );
 };

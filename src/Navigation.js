@@ -9,7 +9,7 @@ const Navigation = ({stage, setStage}) => {
     }
     return (
         <div>
-            <button onClick={() => {setStage(stage => ++stage)}}>{prompt}</button>
+            <button htmlFor="nameInput" onClick={() => {setStage(stage => ++stage)}}>{prompt}</button>
         </div>
     );
 };

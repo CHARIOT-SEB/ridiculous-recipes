@@ -1,7 +1,7 @@
 const Recipe = () => {
     return (
         <div>
-            reciipe test
+            recipe test
         </div>
     );
 };
