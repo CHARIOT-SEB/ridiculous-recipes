@@ -7,7 +7,7 @@ import { useState } from 'react';
 
 function App() {
   const [stage, setStage] = useState(0);
-  if (stage === 6) {
+  if (stage === 4) {
     setStage(0);
   }
 
@@ -15,16 +15,14 @@ function App() {
     name: '',
     ingredients: [],
     equipment: [],
-    time: '',
-    hunger: 0,
   });
 
   return (
     <div className="App">
       <h1>Ridiculous Recipes</h1>
-      {stage < 5 && <Question stage={stage} />}
-      {stage < 5 && <Response stage={stage} setResponses={setResponses} responses={responses}/>}
-      {stage === 5 && <Recipe />}
+      {stage < 3 && <Question stage={stage} />}
+      {stage < 3 && <Response stage={stage} setResponses={setResponses} responses={responses}/>}
+      {stage === 3 && <Recipe responses={responses}/>}
       <Navigation stage={stage} setStage={setStage} />
     </div>
   );
