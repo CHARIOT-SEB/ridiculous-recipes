@@ -10,7 +10,7 @@ const Response = ({stage, setResponses, responses}) => {
         <div>
             {stage === 0 && <GetName setResponses={ setResponses }/>}
             {stage === 1 && <GetFoods setResponses={ setResponses} responses={responses}/>}
-            {stage === 2 && <GetEquipment />}
+            {stage === 2 && <GetEquipment setResponses={ setResponses} responses={responses}/>}
             {stage === 3 && <GetTime />}
             {stage === 4 && <GetHunger />}
 

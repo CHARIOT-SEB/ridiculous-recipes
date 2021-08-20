@@ -17,14 +17,14 @@ const GetFoods = ({setResponses, responses}) => {
   return (
     <div>
        <form onSubmit={handleSubmit}>
-                <input id="ingredientInput" type="text" value={newIngredient} onChange={(event)=> {
+                <input key="ingredientInput" type="text" value={newIngredient} onChange={(event)=> {
                     setNewIngredient(event.target.value)
                 }}></input>
                 <button htmlFor="ingredientInput">+</button>
             </form>
             <ul>
               {responses.ingredients.map(ingredient => {
-                return <li id={ingredient}>{ingredient}</li>
+                return <li key={ingredient}>{ingredient}</li>
               })}
             </ul>
     </div>
