@@ -5,11 +5,11 @@ import GetTime from './responseComponents/GetTime.js';
 import GetHunger from './responseComponents/GetHunger.js';
 
 
-const Response = ({stage}) => {
+const Response = ({stage, setResponses, responses}) => {
     return (
         <div>
-            {stage === 0 && <GetName />}
-            {stage === 1 && <GetFoods />}
+            {stage === 0 && <GetName setResponses={ setResponses }/>}
+            {stage === 1 && <GetFoods setResponses={ setResponses} responses={responses}/>}
             {stage === 2 && <GetEquipment />}
             {stage === 3 && <GetTime />}
             {stage === 4 && <GetHunger />}

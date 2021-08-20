@@ -1,18 +1,19 @@
 import { useState } from "react";
-import setResponses from '../App';
-
-const GetName = () => {
+let message = 'Submit name'
+let active = 'button-active'
+const GetName = ({ setResponses }) => {
     const [newName, setNewName] = useState('') 
     const handleSubmit = (event) => {
         event.preventDefault()
         setResponses((currentResponse) => {
-          console.log(currentResponse);
-          const { stage, ...rest } = currentResponse // <<------ HELP
-          return Object.assign({newName}, rest)
+          const copy = { ...currentResponse }
+          copy.name = newName
+          return copy
         });
-    }
+    message = '✔'
+    active = 'button-inactive'
 
-    //  return dogs.map(dog => {    const { age, ...rest } = dog    return Object.assign({ age: age * 7 }, rest)    })   };
+    }
 
     return (
         <div>
@@ -20,7 +21,7 @@ const GetName = () => {
                 <input id="nameInput" type="text" value={newName} onChange={(event)=> {
                     setNewName(event.target.value)
                 }}></input>
-                <button htmlFor="nameInput">Submit name</button>
+                <button htmlFor="nameInput" className={active}>{message}</button>
             </form>
         </div>
     );
