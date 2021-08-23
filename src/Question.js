@@ -9,6 +9,7 @@ const Question = ({ stage }) => {
     return (
         <section>
             {questions[stage]}
+            <br /><br />
         </section>
     );
 };

@@ -1,7 +1,7 @@
 const Navigation = ({stage, setStage}) => {
     let prompt
     if (stage < 4) {
-        prompt = "→"
+        prompt = '→ next stage →';
     } else if (stage === 4) {
         prompt = "Create your recipe"
     } else {
