@@ -24,4 +24,15 @@ ul {
 
 .results {
   display: flex;
+  justify-content: center;
+  margin: 2rem;
+
+}
+
+.ingredients {
+  margin: 1rem;
+}
+
+.steps {
+  margin: 1rem;
 }
